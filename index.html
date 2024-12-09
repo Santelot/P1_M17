@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M17</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .time-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .banner .title {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .banner .subtitle {
+            font-size: 0.9em;
+            margin-top: 0;
+            border-top: 1px solid white;
+            padding-top: 5px;
+            color: #e0e0e0;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const teamGniusStep6 = document.getElementById('team-gnius-step-6');
+            const teamGniusStep7 = document.getElementById('team-gnius-step-7');
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                teamGniusStep6.style.display = 'none';
+                teamGniusStep7.style.display = 'none';
+            } else {
+                activity2.style.display = 'block';
+                teamGniusStep6.style.display = 'block';
+                teamGniusStep7.style.display = 'block';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P1-M17</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_mision')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <div class="subtitle">Verificación inicial del equipo y materiales necesarios.</div>
+    </div>
+    <div id="revision_mision" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 1 "Revisión de Misión" y verificar que:
+                    <ul>
+                        <li>Los dispositivos están encendidos y tienen acceso a Scratch Jr.</li>
+                        <li>Las Magic Tablets, sets de 6 bloques de Lego por alumno están listos.</li>
+                        <li>El espacio de trabajo está organizado.</li>
+                    </ul>
+                </td>
+                <td>No aplica</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('saludo_ritual')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</div>
+        <div class="subtitle">Bienvenida al grupo y presentación de los objetivos del día.</div>
+    </div>
+    <div id="saludo_ritual" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 2 "¡Bienvenidos, Genios!". Saludar a los estudiantes con entusiasmo y energía.
+                </td>
+                <td>
+                    "¡Hola, Genios! 🌟 ¿Están listos para una nueva aventura en el mundo de los animales? Hoy vamos a explorar sus movimientos, sonidos y las historias que podemos contar con ellos. ¡Va a ser súper divertido! 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 3 "¿Cómo se sienten hoy?" con opciones visuales de poses. Pedir que representen cómo se sienten usando estas poses.
+                </td>
+                <td>
+                    "¡Genios! Muéstrenme cómo se sienten hoy. Si están llenos de energía y listos para saltar a la acción como un canguro, hagan el Salto del Canguro 🦘. Si están tranquilos y relajados pero atentos como un gato, hagan la Pose de Descanso del Gato 🐱. ¡Quiero ver sus poses!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar la diapositiva 4 "Ritual de Agradecimiento". Guiar a los estudiantes para realizar el ritual en conjunto.
+                </td>
+                <td>
+                    "Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios! Hoy vamos a aprender, explorar y divertirnos mientras creamos aventuras increíbles con animales. ¡A por ello!'"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar la diapositiva 5 "Objetivos de la Misión". Enumerar los objetivos de la misión en un formato claro y motivador.
+                </td>
+                <td>
+                    "¡Hoy tenemos una misión increíble, Genios! Aquí están nuestros tres grandes objetivos:
+                    <br><br>
+                    <strong>1.</strong> Usar bloques de movimiento y sonido en Scratch Jr. para animar a nuestros animales.
+                    <br><br>
+                    <strong>2.</strong> Diseñar escenas donde nuestros animales exploren y hagan sonidos.
+                    <br><br>
+                    <strong>3.</strong> Compartir nuestras historias y reflexionar en equipo para aprender juntos.
+                    <br><br>
+                    ¡Va a ser un gran día de aprendizaje y aventuras!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('brain_vitamin')">
+        <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+        <div class="subtitle">Actividad creativa para activar la mente y construir habilidades motoras.</div>
+    </div>
+    <div id="brain_vitamin" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 6 "Brain Vitamin: ¡Activa tu Mente!". Introducir brevemente el propósito de la actividad.
+                </td>
+                <td>
+                    "¡Es momento del Brain Vitamin, Genios! Hoy utilizaremos nuestros bloques de Lego para construir criaturas increíbles mientras nos divertimos y activamos nuestra mente. ¡Manos a la obra!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2:</strong> Proyectar la diapositiva 7 "Construye tu Criatura". Dar instrucciones para que cada estudiante use sus seis bloques de Lego para construir una criatura, mientras piensa en cómo se mueve y qué sonido hace.
+                </td>
+                <td>
+                    "¡Vamos a construir criaturas únicas con nuestros bloques! Usen su imaginación para diseñar un animal con los seis bloques. ¿Cómo se mueve? ¿Qué sonido hace? ¡Muéstrenme su magia!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3:</strong> Proyectar la diapositiva 8 "Movimientos y Sonidos de Criaturas". Pedir a los estudiantes que imiten los movimientos y sonidos de las criaturas que construyeron.
+                </td>
+                <td>
+                    "Ahora, ¡vamos a darles vida a nuestras criaturas! Genios, imaginen cómo se mueve y suena su creación. Por turnos, muéstrennos su movimiento y sonido. ¡Prepárense para asombrar!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('challenge')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 24.5 minutos</div>
+        <div class="subtitle">Resolución de retos prácticos para programar movimientos y sonidos en Scratch Jr.</div>
+    </div>
+    <div id="challenge" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 9 "¡Hora del Desafío!". Explicar a los estudiantes que trabajarán en retos relacionados con movimientos, sonidos, y programación en Scratch Jr.
+                </td>
+                <td>
+                    "¡Genios, llegó el momento que todos esperábamos! 🦁 Hoy, sus animales están listos para vivir las aventuras más emocionantes. Tenemos tres niveles de desafíos geniales para que elijan: Rookie, Master y Hacker. ¡Elijan el que más los emocione y prepárense para ser unos cracks de Scratch Jr.!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2:</strong> Proyectar la diapositiva 10A "Usando Escenas en Scratch Jr.". Explicar cómo crear, modificar y conectar escenas en sus proyectos.
+                </td>
+                <td>
+                    "Antes de comenzar, recordemos algo muy importante: ¡las escenas! 🌌 En Scratch Jr., las escenas son como capítulos de un libro. - Para añadir una nueva escena, toca el botón de 'Más' en la barra inferior. - Para cambiar entre escenas, utiliza las flechas en la parte superior. - Cada escena puede tener un fondo y programación únicos. ¡Úsenlas para crear su historia galáctica!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3:</strong> Proyectar la diapositiva 11 "Niveles del Desafío". Explicar claramente los objetivos, instrucciones, condiciones, y un consejo útil para cada nivel.
+                </td>
+                <td>
+                    <strong>Rookie:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Aprender a mover a su animal y agregar sonidos geniales.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Elige un animal, colócalo en un fondo de bosque y programa su recorrido de ida y vuelta. Al llegar a cada extremo, haz que suene algo increíble.
+                    <br><br>
+                    <strong>Condiciones:</strong> ¡Recuerda usar bloques diferentes para cada sonido!
+                    <br><br>
+                    <strong>Consejo:</strong> Prueba los movimientos paso a paso para que todo salga perfecto.
+                    <br><br>
+                    <strong>Master:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Diseñar trayectorias más complejas y sonidos únicos para cada lugar.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Crea un proyecto con tres escenas y haz que tu animal explore cada una, agregando un sonido en el centro de cada escena.
+                    <br><br>
+                    <strong>Condiciones:</strong> Trabaja cada escena por separado antes de unirlas todas.
+                    <br><br>
+                    <strong>Hacker:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Sincronizar movimientos complejos y sonidos únicos en cada punto.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Diseña trayectorias increíbles como zigzag o saltos, y crea sonidos especiales para cada escena.
+                    <br><br>
+                    <strong>Condiciones:</strong> ¡No te olvides de practicar el momento del cruce si tienes más de un personaje!
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4:</strong> Proyectar la diapositiva 12 "Manos a la Obra". Supervisar a los estudiantes mientras trabajan, ayudándolos a cumplir las condiciones y resolver dudas.
+                </td>
+                <td>
+                    "¡Es su turno, Genios! Elijan su nivel y comiencen su aventura: - <strong>Rookie:</strong> Un animal que avanza, gira y hace sonidos. - <strong>Master:</strong> Trayectorias circulares con sonidos. - <strong>Hacker:</strong> Dos personajes con trayectorias opuestas y sonidos sincronizados. ¡Demuestren su creatividad y habilidades!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 5:</strong> Proyectar la diapositiva 13 "Reflexionemos Juntos". Facilitar que los estudiantes muestren sus proyectos y expliquen cómo lograron cumplir con las condiciones de cada nivel.
+                </td>
+                <td>
+                    "¡Qué trabajo increíble, Genios! Vamos a compartir nuestras creaciones: - Si trabajaron en <strong>Rookie</strong>, cuéntenos cómo lograron que el animal girara y emitiera un sonido. - Los de <strong>Master</strong>, expliquen cómo sincronizaron una trayectoria circular con sonidos en cada giro. - Y los de <strong>Hacker</strong>, muestren cómo lograron coordinar dos personajes con movimientos opuestos y sonidos sincronizados. ¿Qué aprendieron hoy?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('team_gnius')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <div class="subtitle">Trabajo en equipo para evaluar y mejorar los proyectos en Scratch Jr.</div>
+    </div>
+    <div id="team_gnius" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 14 "Formación de Equipos". Pedir a los estudiantes que formen equipos con compañeros cercanos para realizar la actividad.
+                </td>
+                <td>
+                    "¡Es hora de trabajar en equipo, Genios! 🎉 Formen grupos de 2 o 3 compañeros cercanos. Estos serán sus compañeros de aventura para revisar y mejorar sus proyectos. ¡Vamos a demostrar el poder del trabajo en equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2:</strong> Proyectar la diapositiva 15 "Organización de Equipos". Usar un temporizador de 30 segundos para que los estudiantes encuentren compañeros y se organicen.
+                </td>
+                <td>
+                    "Tienen 30 segundos para encontrar a sus compañeros de equipo y organizarse. Recuerden elegir a alguien cercano y prepararse para colaborar juntos. ¡Rápido pero organizado!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3:</strong> Proyectar la diapositiva 16 "Recoge tu Magic Tablet". Pedir a los estudiantes que recojan una Magic Tablet del área asignada en un límite de 30 segundos.
+                </td>
+                <td>
+                    "¡Genios, ahora necesitamos nuestras herramientas mágicas! Cada uno debe recoger una Magic Tablet del área asignada para tomar notas y trabajar en equipo. Tienen 30 segundos. ¡Vamos, que el tiempo corre!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4:</strong> Proyectar la diapositiva 17 "Revisión en Equipo". Pedir a los estudiantes que observen los proyectos de sus compañeros y respondan a preguntas clave para proporcionar retroalimentación.
+                </td>
+                <td>
+                    "Ahora vamos a ser críticos constructivos, Genios. Observen el trabajo de sus compañeros y respondan a estas preguntas: - ¿Qué nivel completaste? - ¿Qué fue lo más fácil o difícil? - ¿Qué mejorarías? Recuerden que dar retroalimentación nos ayuda a crecer. ¡Sean respetuosos y constructivos!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 5:</strong> Proyectar la diapositiva 18 "Turno de Maestro". Dar tiempo para que cada estudiante explique su proyecto a su compañero mientras el otro escucha y formula preguntas. Luego, alternar roles.
+                </td>
+                <td>
+                    "¡Genios, ahora es su turno de enseñar! Uno será el maestro y explicará su proyecto: qué hizo, qué bloques usó y qué aprendió. El aprendiz hará preguntas para aprender más. Luego cambien de roles. ¡Aprender enseñando es súper poderoso!"
+                </td>
+            </tr>
+            <tr id="team-gnius-step-6">
+                <td>
+                    <strong>Paso 6:</strong> Proyectar la diapositiva 19 "Mejora en Equipo". Dar tiempo a los equipos para trabajar juntos en los ajustes sugeridos durante la revisión.
+                </td>
+                <td>
+                    "¡Manos a la obra en equipo, Genios! Usen las ideas que compartieron y ajusten sus proyectos para hacerlos aún mejores. Recuerden, ¡juntos podemos lograrlo todo!"
+                </td>
+            </tr>
+            <tr id="team-gnius-step-7">
+                <td>
+                    <strong>Paso 7:</strong> Proyectar la diapositiva 20 "Reflexión en Equipo". Facilitar preguntas como: - ¿Qué aprendiste de tu compañero? - ¿Qué fue lo mejor de trabajar juntos? - ¿Cómo se sintieron al compartir ideas?
+                </td>
+                <td>
+                    "Genios, reflexionemos juntos: - ¿Qué aprendieron de su compañero? - ¿Qué fue lo mejor de colaborar? - ¿Cómo se sintieron al compartir ideas? ¡Recuerden, el aprendizaje compartido es un superpoder!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('honor_lab')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 3.5 minutos</div>
+        <div class="subtitle">Reflexión final y organización del espacio de trabajo.</div>
+    </div>
+    <div id="honor_lab" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 21 "Revisión de Objetivos". Guiar a los estudiantes en una breve reflexión grupal sobre lo aprendido y logrado durante la clase.
+                </td>
+                <td>
+                    "¡Genios, qué increíble trabajo hicimos hoy! Vamos a reflexionar juntos: - ¿Logramos nuestros objetivos? Sí, programamos movimientos y sonidos, creamos escenas asombrosas, y trabajamos en equipo. ¡Todo gracias a su esfuerzo y creatividad! 🎉"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2:</strong> Reconocer el esfuerzo y creatividad de los estudiantes mediante un mensaje verbal motivador.
+                </td>
+                <td>
+                    "¡Felicidades, Genios! Hoy hicieron un trabajo asombroso. Cada movimiento y sonido que crearon nos llevó a vivir aventuras increíbles. Recuerden: ¡Ustedes tienen el poder de crear cosas maravillosas! Nos vemos en nuestra próxima misión. ¡A seguir siendo geniales!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3:</strong> Proyectar la diapositiva 22 "Organización del Espacio". Pedir a los estudiantes que devuelvan los materiales (Magic Tablets, bloques de Lego, etc.) a su lugar correspondiente. Supervisar mientras lo hacen.
+                </td>
+                <td>
+                    "Ahora es el momento de honrar nuestro laboratorio, Genios. Devuelvan sus Magic Tablets, bloques de Lego y cualquier otro material a su lugar. Recuerden, un espacio limpio y ordenado es parte del éxito. ¡Gracias por su ayuda!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Espacio para agregar scripts adicionales si son necesarios.
+    </script>
+</body>
+</html>
+
+
